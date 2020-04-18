@@ -1,6 +1,6 @@
-import numpy as np
-
-A, B, C, D = map(int, input().split())
-x, y = zip(*sorted(zip([A, B, C, D], [1, -1, 1, -1])))
-z = np.diff(x)[np.cumsum(y)[:-1] == 2]
-print(z[0] if len(z) == 1 else 0)
+x = map(int, input().split())
+x = sorted(zip(x, [1, -1, 1, -1]))
+if x[1][1] == 1:
+  print(x[2][0] - x[1][0])
+else:
+  print(0)
